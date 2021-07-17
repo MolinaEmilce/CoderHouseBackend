@@ -126,4 +126,3 @@ const routerEliminar = router.delete('/borrar/:id',(req,res)=>{
     res.send('Se ha eliminado el producto');
 })
 app.use('/api/productos/',routerEliminar);
-
