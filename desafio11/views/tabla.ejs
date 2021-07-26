@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+  <div class="container my-4 my-4 col-lg-6 col-md- col-sm-8 col-11 text-center">
+    <h3 class="py-2">Vista de productos</h3>
+    <table class="table table-warning table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Foto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%  if (productos.error){ %>
+          <tr class="h-50 table-danger">
+            <td colspan="3">{{productos.error}}</td>
+          </tr>
+        <% } else { %>
+            <% productos.forEach(producto => { %>
+            <tr class="h-50">
+              <td><%= producto.title %> </td>
+              <td><%= producto.price %></td>
+              <td><img src = <%= producto.thumbnail %> width="30" height="30" alt=""></td>
+            </tr>
+          
+          <% }) } %>
+          
+        </tbody>
+      </table>
+</div>
+<%- include('./partials/scripts') %> 
+</body>
+</html>
+    

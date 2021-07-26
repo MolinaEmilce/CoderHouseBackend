@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %> 
+<body>
+    <div class="container bg-warning col-lg-4 col-md-5 col-sm-7 col-11 text-center mt-4 mt-4 py-4">
+        <h3>Subir Productos</h3>
+        <form action="/productos/guardar" method="POST" class="col-11 mx-auto">
+            <div class="form-floating mb-3">
+                <input type="text" name="title" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Nombre:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="price" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Precio:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="thumbnail" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Thumbnail:</label>
+            </div>
+            <div class="form-floating mb-3">
+               <button class="btn btn-success py-2 col-12"> Agregar </button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/scripts') %> 
+</body>
+</html>
