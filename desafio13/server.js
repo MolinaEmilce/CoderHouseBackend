@@ -7,7 +7,7 @@ const io = require('socket.io')(server);
 //Config de archivos estaticos...
 app.use(express.static(__dirname + '/public'));
 
-const mensajes = [
+let mensajes = [
     {
         autor : 'Emilce',
         texto : "Bienvenidos/as"
@@ -28,7 +28,7 @@ io.on('connection', socket =>{
 
     //RECIBE informacion del lado del cliente
     socket.on('nuevo-mensaje', mensaje =>{
-        
+
             mensajes.push(mensaje);
             //ENVÍO GLOBAL, a todos los clientes conectados, es decir que a todos los que se hayan conectados, se enviara a todos
             io.sockets.emit('mensajes',mensajes)
